@@ -1,0 +1,24 @@
+h1 Listing articles
+
+table
+  tr
+    th ID
+    th Title
+    th Text
+    th Created At
+    th Updated At
+
+  - @articles.each do |article|
+    tr
+      td
+        = link_to article.id, article_path(article)
+      td
+        = article.title
+      td
+        = article.text
+      td
+        = article.created_at
+      td
+        = article.updated_at
+
+= link_to 'New article', new_article_path

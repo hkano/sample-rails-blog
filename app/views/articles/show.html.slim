@@ -1,0 +1,26 @@
+p
+  strong ID:
+  | &nbsp;
+  = @article.id
+
+p
+  strong Title:
+  | &nbsp;
+  = @article.title
+
+p
+  strong Text:
+  | &nbsp;
+  = @article.text
+
+p
+  strong Created At:
+  | &nbsp;
+  = @article.created_at
+
+p
+  strong Updated At:
+  | &nbsp;
+  = @article.updated_at
+
+= link_to 'Back', articles_path
