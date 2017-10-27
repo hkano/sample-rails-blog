@@ -1,7 +1,7 @@
 h1 Listing articles
 
 p
-  = link_to 'New article', new_article_path
+  = link_to "New article", new_article_path
 
 table
   tr
@@ -26,6 +26,6 @@ table
       td
         = article.updated_at
       td
-        = link_to 'Edit', edit_article_path(article)
+        = link_to "Edit", edit_article_path(article)
       td
-        = link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to "Destroy", article_path(article), method: :delete, data: { confirm: "Are you sure?" }
