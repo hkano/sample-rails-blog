@@ -23,6 +23,13 @@ p
   | &nbsp;
   = @article.updated_at
 
+h2 Comments
+- @article.comments.each do |comment|
+  = render partial: "comments/comment", locals: { comment: comment }
+
+h2 Add a comment:
+= render "comments/form"
+
 = link_to 'Back', articles_path
 | &nbsp;
 | |
