@@ -1,0 +1,27 @@
+h1 Editing article
+
+= form_for :article, url: article_path(@article), method: :patch do |f|
+
+  = render partial: 'errors', locals: { errors: @article&.errors }
+
+  p
+    strong ID:
+    | &nbsp;
+    = @article.id
+
+  = render partial: 'form_input', locals: { f: f }
+
+  p
+    strong Created At:
+    | &nbsp;
+    = @article.created_at
+
+  p
+    strong Updated At:
+    | &nbsp;
+    = @article.updated_at
+
+  p
+    = f.submit
+
+= link_to 'Back', articles_path
