@@ -6,6 +6,18 @@
 bundle install --path vendor/bundle
 ```
 
+## Server start
+
+### Development
+
+```
+bundle exec rails server -e development
+```
+
+### Production
+
+TODO
+
 ## Database
 
 ### Development
