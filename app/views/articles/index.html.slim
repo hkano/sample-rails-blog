@@ -8,6 +8,7 @@ table
     th ID
     th Title
     th Text
+    th Published At
     th Created At
     th Updated At
     th
@@ -21,6 +22,8 @@ table
         = link_to article.title, article_path(article)
       td
         = article.text
+      td
+        = article.published_at
       td
         = article.created_at
       td
