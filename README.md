@@ -3,7 +3,7 @@
 ## Install
 
 ```
-bundle install --path vendor/bundle
+$ bundle install --path vendor/bundle
 ```
 
 ## Server start
@@ -11,7 +11,7 @@ bundle install --path vendor/bundle
 ### Development
 
 ```
-bundle exec rails server -e development
+$ bundle exec rails server -e development
 ```
 
 ### Production
@@ -23,7 +23,7 @@ TODO
 ### Development
 
 ```
-sqlite3 db/development.sqlite3
+$ sqlite3 db/development.sqlite3
 ```
 
 ### Production
