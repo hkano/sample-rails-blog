@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @article.comments.create! comment_params
+    notify_slack(@comment)
     redirect_to article_path @article
   end
 
@@ -21,6 +22,10 @@ class CommentsController < ApplicationController
 
   def set_article
     @article = Article.find params[:article_id]
+  end
+
+  def notify_slack(comment)
+    SlackNotifier::notify("New comment: id => #{comment.id} / commenter => #{comment.commenter}")
   end
 
 end

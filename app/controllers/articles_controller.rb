@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
     rescue ActiveRecord::RecordInvalid
       render :new and return
     end
+    notify_slack(@article)
     redirect_to @article
   end
 
@@ -49,6 +50,10 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.find params[:id]
+  end
+
+  def notify_slack(article)
+    SlackNotifier::notify("New article: id => #{article.id} / title => #{article.title}")
   end
 
 end
