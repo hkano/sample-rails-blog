@@ -4,7 +4,7 @@ h1 New Article
 
   = render partial: "errors", locals: { errors: @article&.errors }
 
-  = render partial: "form_input", locals: { f: f }
+  = render partial: "form_input", locals: { f: f, article: @article }
 
   p
     = f.submit

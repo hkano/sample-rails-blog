@@ -9,7 +9,7 @@ h1 Editing article
     | &nbsp;
     = @article.id
 
-  = render partial: "form_input", locals: { f: f }
+  = render partial: "form_input", locals: { f: f, article: @article }
 
   p
     strong Created At:

@@ -3,10 +3,11 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.published.all
   end
 
   def show
+    redirect_to articles_path unless @article.published?
   end
 
   def new
@@ -45,7 +46,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :published_at)
   end
 
   def set_article
