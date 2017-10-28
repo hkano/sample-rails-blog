@@ -6,6 +6,18 @@
 bundle install --path vendor/bundle
 ```
 
+## Environment variable
+
+### Development
+
+```
+$ cp .env.template .env
+```
+
+### Production
+
+TODO
+
 ## Server start
 
 ### Development
