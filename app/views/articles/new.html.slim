@@ -2,7 +2,7 @@ h1 New Article
 
 = form_for :article, url: articles_path do |f|
 
-  = render partial: "errors", locals: { errors: @article&.errors }
+  = render partial: "common/errors", locals: { errors: @article&.errors }
 
   = render partial: "form_input", locals: { f: f, article: @article }
 

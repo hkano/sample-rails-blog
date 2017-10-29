@@ -3,7 +3,11 @@ class CommentsController < ApplicationController
   before_action :set_article, only: [:create, :destroy]
 
   def create
-    @comment = @article.comments.create! comment_params
+    begin
+      @comment = @article.comments.create! comment_params
+    rescue ActiveRecord::RecordInvalid
+      redirect_to article_path @article and return
+    end
     notify_slack(@comment)
     redirect_to article_path @article
   end

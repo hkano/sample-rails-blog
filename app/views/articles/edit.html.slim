@@ -2,7 +2,7 @@ h1 Editing article
 
 = form_for :article, url: article_path(@article), method: :patch do |f|
 
-  = render partial: "errors", locals: { errors: @article&.errors }
+  = render partial: "common/errors", locals: { errors: @article&.errors }
 
   p
     strong ID:
