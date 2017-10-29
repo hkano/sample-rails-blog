@@ -28,6 +28,13 @@ p
   | &nbsp;
   = @article.updated_at
 
+p
+  | (
+  = "Page View: #{@article.page_view_count}"
+  | &nbsp;/&nbsp;
+  = "Unique User: #{@article.unique_user_count}"
+  | )
+
 h2 Comments
 - @article.comments.each do |comment|
   = render partial: "comments/comment", locals: { comment: comment }

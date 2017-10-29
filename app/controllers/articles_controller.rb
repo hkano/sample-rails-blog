@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
 
+  impressionist actions: [:show]
+
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
