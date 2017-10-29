@@ -1,10 +1,24 @@
 p
+  strong ID:
+  | &nbsp;
+  = comment.id
+  - if comment.replied_to_comment?
+    | &nbsp;
+    = "(>>#{comment.replied_comment_id})"
+
+p
   strong Commenter:
   | &nbsp;
   = comment.commenter
+
 p
   strong Comment:
   | &nbsp;
   = comment.body
+
 p
+  = link_to "Reply Comment", article_path(comment.article, replied_comment_id: comment.id, anchor: "comment_form")
+  | &nbsp;
+  | |
+  | &nbsp;
   = link_to "Destroy Comment", [comment.article, comment], method: :delete, data: { confirm: "Are you sure?" }
