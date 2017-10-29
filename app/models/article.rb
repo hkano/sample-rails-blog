@@ -1,5 +1,7 @@
 class Article < ApplicationRecord
 
+  is_impressionable
+
   has_many :comments, dependent: :destroy
 
   validates :title, presence: true, length: { minimum: 5 }
@@ -13,6 +15,14 @@ class Article < ApplicationRecord
   def published?
     return true if published_at.nil?
     published_at <= Time.zone.now
+  end
+
+  def page_view_count
+    impressionist_count
+  end
+
+  def unique_user_count
+    impressionist_count filter: :ip_address
   end
 
 end
